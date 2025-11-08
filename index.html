@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="path_to_attricss_file.css" type="text/css">
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casual Restaurant — Payment</title>
-    <link rel="stylesheet" href="screen.css" />
+    <link rel="stylesheet" href="path_to_attricss_file.css" type="text/css">
     <style>
       /* Basic layout for the payment UI */
       body { max-width: 980px; margin: 28px auto; padding: 0 16px; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
@@ -49,15 +49,15 @@
         <div style="display:flex; gap:12px; margin-top:12px; flex-wrap:wrap;">
           <div style="flex:2; min-width:180px;">
             <label class="small" for="item-name">Item name</label>
-            <input id="item-name" type="text" placeholder="e.g., Classic Burger" />
+            <input id="item-name" type="text" placeholder="e.g., Classic Burger">
           </div>
           <div style="width:140px;">
             <label class="small" for="item-price">Price $</label>
-            <input id="item-price" type="number" min="0" step="0.01" placeholder="10.50" />
+            <input id="item-price" type="number" min="0" step="0.01" placeholder="10.50">
           </div>
           <div style="width:110px;">
             <label class="small" for="item-qty">Qty</label>
-            <input id="item-qty" type="number" min="1" step="1" value="1" />
+            <input id="item-qty" type="number" min="1" step="1" value="1">
           </div>
           <div style="align-self:end;">
             <button id="add-item" class="btn-pay" type="button">Add to order</button>
@@ -80,7 +80,7 @@
             <option value="0.2">20%</option>
             <option value="custom">Custom</option>
           </select>
-          <input id="tip-custom" type="number" min="0" step="0.5" placeholder="Custom tip $ (optional)" style="display:none; margin-top:8px;" />
+          <input id="tip-custom" type="number" min="0" step="0.5" placeholder="Custom tip $ (optional)" style="display:none; margin-top:8px;">
         </div>
 
         <div class="summary" id="summary">
@@ -91,19 +91,19 @@
 
         <form id="pay-form" class="pay-form" onsubmit="return false;">
           <label class="small">Name on receipt</label>
-          <input id="cust-name" type="text" placeholder="Jane Doe" required />
+          <input id="cust-name" type="text" placeholder="Jane Doe" required>
 
           <label class="small">Card number</label>
-          <input id="card-number" type="text" inputmode="numeric" placeholder="4242 4242 4242 4242" maxlength="19" />
+          <input id="card-number" type="text" inputmode="numeric" placeholder="4242 4242 4242 4242" maxlength="19">
 
           <div style="display:flex; gap:8px;">
             <div style="flex:1;">
               <label class="small">Expiry</label>
-              <input id="card-exp" type="text" placeholder="MM/YY" maxlength="5" />
+              <input id="card-exp" type="text" placeholder="MM/YY" maxlength="5">
             </div>
             <div style="width:110px;">
               <label class="small">CVC</label>
-              <input id="card-cvc" type="text" maxlength="4" />
+              <input id="card-cvc" type="text" maxlength="4">
             </div>
           </div>
 
@@ -280,7 +280,7 @@
           <div class="small">Time: ${r.time}</div>
           <div style="margin-top:8px; font-weight:600;">Items</div>
           <div class="small" style="margin-top:6px;">
-            ${r.items.map(it => `${it.qty} × ${it.name} — ${money(it.line)}`).join('<br/>')}
+            ${r.items.map(it => `${it.qty} × ${it.name} — ${money(it.line)}`).join('<br>')}
           </div>
           <div style="margin-top:8px;">Subtotal: ${money(r.subtotal)}</div>
           <div>Tip: ${money(r.tip)}</div>
