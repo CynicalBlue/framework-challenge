@@ -6,11 +6,10 @@
     <title>Casual Restaurant — Payment</title>
     <link rel="stylesheet" href="path_to_attricss_file.css" type="text/css">
     <style>
-      /* Basic layout for the payment UI */
       body { max-width: 980px; margin: 28px auto; padding: 0 16px; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
       header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px; }
       nav ul { display:flex; gap:12px; list-style:none; padding:0; margin:0; }
-      main { display:grid; grid-template-columns: 1fr; gap:20px; align-items:start; } /* single column (no menu) */
+      main { display:grid; grid-template-columns: 1fr; gap:20px; align-items:start; }
       .panel { border:1px solid #e6e6e6; padding:16px; border-radius:8px; background:#fff; }
       .menu-item { display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-bottom:1px dashed #f0f0f0; }
       .menu-item:last-child { border-bottom: none; }
@@ -41,7 +40,6 @@
       </div>
     </header>
     <main>
-      <!-- Add-item panel (replaces menu) -->
       <section class="panel" id="add-item-panel">
         <h2>Add an item</h2>
         <p class="muted">No preset menu here — quickly add what the customer ordered.</p>
@@ -119,7 +117,6 @@
     </footer>
 
     <script>
-      // ...existing code...
       const cartList = document.getElementById('cart-list');
       const subtotalEl = document.getElementById('subtotal');
       const tipSelect = document.getElementById('tip');
@@ -130,7 +127,6 @@
       const receiptEl = document.getElementById('receipt');
       const nameEl = document.getElementById('cust-name');
 
-      // add-item inputs
       const addBtn = document.getElementById('add-item');
       const itemNameEl = document.getElementById('item-name');
       const itemPriceEl = document.getElementById('item-price');
@@ -162,7 +158,6 @@
           return;
         }
         addCustomItem(name, price, qty);
-        // clear quick inputs
         itemNameEl.value = '';
         itemPriceEl.value = '';
         itemQtyEl.value = '1';
@@ -250,7 +245,6 @@
         payBtn.disabled = true;
         payBtn.textContent = 'Processing…';
 
-        // Simulate processing
         await new Promise(r => setTimeout(r, 1200));
 
         const customer = nameEl.value.trim() || 'Guest';
@@ -265,7 +259,6 @@
         };
 
         showReceipt(receipt);
-        // clear cart
         cart = {};
         renderCart();
         payBtn.disabled = false;
@@ -289,10 +282,7 @@
         `;
         receiptEl.scrollIntoView({ behavior: 'smooth' });
       }
-
-      // Initial render
       renderCart();
-      // ...existing code...
     </script>
   </body>
 </html>
